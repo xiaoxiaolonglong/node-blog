@@ -1,10 +1,6 @@
 <template>
-    <div>
-        <el-row>
-            <el-col :span="24"><div class="grid-content bg-purple-dark"></div>
-                <h1>node 博客</h1>
-            </el-col>
-        </el-row>
+    <div class="page-container">
+       <h1 class="app-title">node 博客</h1>
     </div>
 </template>
 
@@ -21,6 +17,10 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+    .app-title{
+        height: 60px;
+        line-height: 60px;
+        padding: 0 20px;
+    }
 </style>

@@ -1,18 +1,24 @@
 <template>
-    <el-row :gutter="20">
-        <el-col :xs="12" :sm="8" :md="6" v-for="(o) in 4" :key="o">
-            <el-card :body-style="{ padding: '0px' }">
-            <img src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png" class="image">
-            <div style="padding: 14px;">
-                <span>好吃的汉堡</span>
-                <div class="bottom clearfix">
-                <time class="time">{{ currentDate }}</time>
-                <el-button type="text" class="button"><router-link :to="{ path:'detail',query:{id:'1110'}}">详情</router-link></el-button>
-                </div>
+    <el-container>
+        <div class="content-box">
+          <h2>标题</h2>
+          <div class="clearfix">
+            <div class="left-image-box">
+              <img src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png" class="image">
             </div>
-            </el-card>
-        </el-col>
-    </el-row>
+            <div class="right-content-box">
+              <span>
+                高阶线性差分方程： 很多答案侧重于不干涉他人自由，讨论『奥特曼』这部作品为什么值得一看的回答不太多。 
+                我就写一下这篇回答，内容有限，，只能讲述一点点奥特曼的精髓，权当抛砖引玉了。 言归正传 “没有…
+              </span>
+              <el-button type="text" class="button"><router-link :to="{ path:'detail',query:{id:'1110'}}">详情</router-link></el-button>
+            </div>
+          </div>
+          <div class="operate-btn">
+            <el-button type="primary" icon="el-icon-caret-top">赞同</el-button>
+          </div>
+        </div>
+    </el-container>
 </template>
 
 <script>
@@ -25,37 +31,27 @@ export default {
 }
 </script>
 
-<style>
- .el-col {
-   margin-bottom: 20px;
+<style scoped>
+  h2{
+    margin-bottom: 20px;
   }
- .time {
-    font-size: 13px;
-    color: #999;
+  .left-image-box{
+    width: 195px;
+    height: 105px;
+    overflow: hidden;
+    float: left;
   }
-  
-  .bottom {
-    margin-top: 13px;
-    line-height: 12px;
-  }
-
-  .button {
-    padding: 0;
-    float: right;
-  }
-
-  .image {
+  .image{
     width: 100%;
-    display: block;
   }
-
-  .clearfix:before,
-  .clearfix:after {
-      display: table;
-      content: "";
+  .right-content-box{
+      margin-left: 215px;
   }
-  
-  .clearfix:after {
-      clear: both
-  }
+ .content-box{
+   padding: 20px;
+   min-height: 185px;
+ }
+ .operate-btn{
+   margin-top: 20px;
+ }
 </style>
