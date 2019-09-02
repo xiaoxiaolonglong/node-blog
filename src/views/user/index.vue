@@ -1,23 +1,23 @@
 <template>
-    <div>
-        <div v-for="(data,index) in blogList" :key="index" class="content-box">
-          <h2>{{data.title}}</h2>
-          <div class="clearfix">
-            <div class="left-image-box">
+    <el-container>
+        <div class="content-box">
+          <h2>标题</h2>
+          <el-row :gutter="10">
+            <el-col :xs="24" :sm="24" :md="8" :lg="8" :xl="8">
               <img src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png" class="image">
-            </div>
-            <div class="right-content-box">
+            </el-col>
+            <el-col :xs="24" :sm="24" :md="16" :lg="16" :xl="16">
               <span>
                 {{data.content}}
               </span>
-              <el-button type="text" class="button"><router-link :to="{ path:'detail',query:{id:data.id}}">详情</router-link></el-button>
-            </div>
-          </div>
+              <el-button type="text" class="button"><router-link :to="{ path:'detail',query:{id:'1110'}}">详情</router-link></el-button>
+            </el-col>
+          </el-row>
           <div class="operate-btn">
             <el-button type="primary" icon="el-icon-caret-top">赞同</el-button>
           </div>
         </div>
-    </div>
+    </el-container>
 </template>
 
 <script>

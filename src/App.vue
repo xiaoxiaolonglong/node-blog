@@ -10,9 +10,9 @@
             <router-view/>
           </div>
         </el-main>
-        <el-aside width="300px">
+        <!-- <el-aside width="300px">
           <asideNav></asideNav>
-        </el-aside>
+        </el-aside> -->
       </el-container>
     </el-container>
     <!-- <footerNav></footerNav> -->
@@ -41,7 +41,7 @@ export default {
   header{
     position: relative;
     z-index: 100;
-    min-width: 1032px;
+    /* max-width: 1032px; */
     overflow: hidden;
     background: #fff;
     -webkit-box-shadow: 0 1px 3px rgba(26,26,26,.1);
@@ -49,12 +49,12 @@ export default {
     background-clip: content-box;
   }
   .page-container{
-    width: 1140px;
+    width: 100%;
+    max-width: 1140px;
     margin: 0 auto;
   }
   .app-main{
     flex-shrink: 0;
-    margin-right: 10px;
     margin-bottom: 0;
     -webkit-box-shadow: 0 1px 3px rgba(26,26,26,.1);
     box-shadow: 0 1px 3px rgba(26,26,26,.1)
