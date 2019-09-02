@@ -2,18 +2,18 @@
     <el-container>
         <div class="content-box">
           <h2>标题</h2>
-          <div class="clearfix">
-            <div class="left-image-box">
+          <el-row :gutter="10">
+            <el-col :xs="24" :sm="24" :md="8" :lg="8" :xl="8">
               <img src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png" class="image">
-            </div>
-            <div class="right-content-box">
+            </el-col>
+            <el-col :xs="24" :sm="24" :md="16" :lg="16" :xl="16">
               <span>
                 高阶线性差分方程： 很多答案侧重于不干涉他人自由，讨论『奥特曼』这部作品为什么值得一看的回答不太多。 
                 我就写一下这篇回答，内容有限，，只能讲述一点点奥特曼的精髓，权当抛砖引玉了。 言归正传 “没有…
               </span>
               <el-button type="text" class="button"><router-link :to="{ path:'detail',query:{id:'1110'}}">详情</router-link></el-button>
-            </div>
-          </div>
+            </el-col>
+          </el-row>
           <div class="operate-btn">
             <el-button type="primary" icon="el-icon-caret-top">赞同</el-button>
           </div>
