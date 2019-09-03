@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import login from '@/views/user/login'
 import index from '@/views/user/index'
 import detail from '@/views/user/detail'
 import newBlog from '@/views/user/new-blog'
@@ -22,6 +23,11 @@ export default new Router({
       path: '/new-blog',
       name: 'newBlog',
       component: newBlog
-    }
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: login
+    },
   ]
 })

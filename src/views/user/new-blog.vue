@@ -13,13 +13,13 @@
                 :show-file-list="false"
                 :on-success="handleAvatarSuccess"
                 :before-upload="beforeAvatarUpload">
-                <img v-if="imageUrl" :src="imageUrl" class="avatar">
+                <img v-if="form.imgurl" :src="form.imgurl" class="avatar">
                 <i v-else class="el-icon-plus avatar-uploader-icon"></i>
             </el-upload>
         </el-form-item>
         <el-form-item>
             <el-button type="primary" @click="onSubmit">提交</el-button>
-            <el-button>取消</el-button>
+            <el-button @click="$router.go(-1)">取消</el-button>
         </el-form-item>
     </el-form>
 </template>
@@ -31,17 +31,17 @@
         form: {
           title: '',
           content: '',
+          imgurl: '',
         },
-        imageUrl: ''
       }
     },
     methods: {
       onSubmit() {
-        console.log('submit!');
+        this.addBlog();
       },
       handleAvatarSuccess(res, file) {
-        // this.imageUrl = res.data.img;
-        this.imageUrl = URL.createObjectURL(file.raw);
+        this.form.imgurl = res.data.img;
+        // this.imageUrl = URL.createObjectURL(file.raw);
       },
       beforeAvatarUpload(file) {
         const isJPG = file.type === 'image/jpeg';
@@ -53,6 +53,18 @@
           this.$message.error('上传头像图片大小不能超过 2MB!');
         }
         return isJPG && isLt2M;
+      },
+      addBlog(){
+        let self = this;
+        //使用axios请求数据
+        this.axios.post("/api/blog/new",self.form).then(function (response) {
+              //此处要使用self，如果使用this指向的是axios对象，不再是vue对象
+              // self.movieList = response.data;
+              self.$router.push({path:"/"});
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
       }
     }
   }
@@ -79,7 +91,7 @@
         color: #8c939d;
         width: 178px;
         height: 178px;
-        line-height: 178px;
+        line-height: 178px !important;
         text-align: center;
     }
     .avatar {

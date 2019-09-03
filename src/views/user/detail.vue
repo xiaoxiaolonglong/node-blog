@@ -1,9 +1,14 @@
 <template>
     <div class="content-box">
         <el-row>
-            <el-col :span="24"><el-page-header @back="$router.go(-1)" content="博客详情"></el-page-header></el-col>
+            <el-col :span="24"><el-page-header @back="$router.go(-1)" content=""></el-page-header></el-col>
             <el-col :span="24"><h2 class="detial-title">{{detail.title}}</h2></el-col>
-            <el-col :span="24"><div class="detail-author"><span>作者：{{detail.author}}</span><span>发布时间：{{detail.createtime}}</span></div></el-col>
+            <el-col :span="24">
+                <div class="detail-author">
+                    <div><span>作者：{{detail.author}}</span></div>
+                    <div><span>发布时间：{{detail.createtime}}</span></div>
+                </div>
+            </el-col>
             <el-col :span="24">
                 <div class="detail-content">
                     <p>
