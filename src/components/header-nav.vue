@@ -2,6 +2,7 @@
     <div class="page-container clearfix">
        <h2 class="app-title">node 博客</h2>
        <div class="app-user">
+            <el-button type="primary" size="small" round @click="$router.push({path:'/generate'})">生成微信头像</el-button>
             <el-button type="primary" size="small" round @click="$router.push({path:'/new-blog'})">写博客</el-button>
             <el-button type="success" size="small" round>我的博客</el-button>
        </div>

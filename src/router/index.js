@@ -4,6 +4,7 @@ import login from '@/views/user/login'
 import index from '@/views/user/index'
 import detail from '@/views/user/detail'
 import newBlog from '@/views/user/new-blog'
+import generate from '@/views/user/generate'
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: login
+    },
+    {
+      path: '/generate',
+      name: 'generate',
+      component: generate
     },
   ]
 })
